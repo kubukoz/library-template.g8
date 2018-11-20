@@ -1,1 +1,1 @@
-addSbtPlugin("com.geirsson" % "sbt-ci-release" % $sbtCiReleaseVersion$)
+addSbtPlugin("com.geirsson" % "sbt-ci-release" % "$sbtCiReleaseVersion$")

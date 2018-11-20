@@ -19,13 +19,13 @@ val compilerPlugins = List(
 )
 
 val commonSettings = Seq(
-  scalaVersion := $scalaVersion$,
+  scalaVersion := "$scalaVersion$",
   scalacOptions ++= Options.all,
   fork in Test := true,
-  name := $repositoryName$,
+  name := "$repositoryName$",
   updateOptions := updateOptions.value.withGigahorse(false), //may fix publishing bug
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % $scalatestVersion$ % Test
+    "org.scalatest" %% "scalatest" % "$scalatestVersion$" % Test
   ) ++ compilerPlugins
 )
 
