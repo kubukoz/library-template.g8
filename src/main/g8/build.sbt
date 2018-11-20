@@ -25,7 +25,7 @@ val commonSettings = Seq(
   name := $repositoryName$,
   updateOptions := updateOptions.value.withGigahorse(false), //may fix publishing bug
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % $scalatestVersion % Test
+    "org.scalatest" %% "scalatest" % $scalatestVersion$ % Test
   ) ++ compilerPlugins
 )
 
