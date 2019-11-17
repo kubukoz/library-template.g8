@@ -14,16 +14,17 @@ inThisBuild(
   ))
 
 val compilerPlugins = List(
-  compilerPlugin("org.scalamacros" % "paradise" % "2.1.1").cross(CrossVersion.full),
-  compilerPlugin("org.spire-math" %% "kind-projector" % "0.9.8")
+  compilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full),
+  compilerPlugin("org.typelevel" % "kind-projector" % "0.11.0" cross CrossVersion.full),
+  compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
 )
 
 val commonSettings = Seq(
   scalaVersion := "$scalaVersion$",
-  scalacOptions ++= Options.all,
+  scalacOptions ~= (_.filterNot(_ == "-Xfatal-warnings")),
   fork in Test := true,
   name := "$repositoryName$",
-  updateOptions := updateOptions.value.withGigahorse(false), //may fix publishing bug
+  updateOptions := updateOptions.value.withGigahorse(false),
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "$scalatestVersion$" % Test
   ) ++ compilerPlugins
