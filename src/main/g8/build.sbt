@@ -13,20 +13,20 @@ inThisBuild(
     )
   ))
 
+def crossPlugin(x: sbt.librarymanagement.ModuleID) = compilerPlugin(x cross CrossVersion.full)
 val compilerPlugins = List(
-  compilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full),
-  compilerPlugin("org.typelevel" % "kind-projector" % "0.11.0" cross CrossVersion.full),
+  crossPlugin("org.typelevel" % "kind-projector" % "0.11.0"),
+  crossPlugin("com.github.cb372" % "scala-typed-holes" % "0.1.1"),
   compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
 )
 
 val commonSettings = Seq(
   scalaVersion := "$scalaVersion$",
-  scalacOptions ~= (_.filterNot(_ == "-Xfatal-warnings")),
-  fork in Test := true,
+  scalacOptions -=-= Seq("-Xfatal-warnings"),
   name := "$repositoryName$",
   updateOptions := updateOptions.value.withGigahorse(false),
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "$scalatestVersion$" % Test
+    "org.scalatest" %% "scalatest" % "3.1.0" % Test
   ) ++ compilerPlugins
 )
 
