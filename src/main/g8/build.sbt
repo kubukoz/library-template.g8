@@ -22,7 +22,7 @@ val compilerPlugins = List(
 
 val commonSettings = Seq(
   scalaVersion := "$scalaVersion$",
-  scalacOptions -=-= Seq("-Xfatal-warnings"),
+  scalacOptions --= Seq("-Xfatal-warnings"),
   name := "$repositoryName$",
   updateOptions := updateOptions.value.withGigahorse(false),
   libraryDependencies ++= Seq(
