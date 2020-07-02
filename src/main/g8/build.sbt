@@ -26,7 +26,7 @@ val commonSettings = Seq(
   name := "$name$",
   updateOptions := updateOptions.value.withGigahorse(false),
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.1.0" % Test
+    "org.scalatest" %% "scalatest" % "3.1.2" % Test
   ) ++ compilerPlugins
 )
 
