@@ -1,7 +1,7 @@
 inThisBuild(
   List(
     organization := "com.kubukoz",
-    homepage := Some(url("https://github.com/kubukoz/$repositoryName$")),
+    homepage := Some(url("https://github.com/kubukoz/$name$")),
     licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
     developers := List(
       Developer(
@@ -23,7 +23,7 @@ val compilerPlugins = List(
 val commonSettings = Seq(
   scalaVersion := "$scalaVersion$",
   scalacOptions --= Seq("-Xfatal-warnings"),
-  name := "$repositoryName$",
+  name := "$name$",
   updateOptions := updateOptions.value.withGigahorse(false),
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "3.1.0" % Test
