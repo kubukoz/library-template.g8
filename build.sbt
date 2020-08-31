@@ -12,6 +12,6 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= Seq(
       compilerPlugin("org.typelevel" % "kind-projector" % "0.11.0" cross CrossVersion.full),
       compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
-      "org.scalatest" %% "scalatest" % "3.1.0" % Test
+      "org.scalatest" %% "scalatest" % "3.1.4" % Test
     )
   )
