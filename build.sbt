@@ -10,7 +10,7 @@ lazy val root = (project in file(".")).
     scriptedLaunchOpts ++= List("-Xms1024m", "-Xmx1024m", "-XX:ReservedCodeCacheSize=128m", "-Xss2m", "-Dfile.encoding=UTF-8"),
     resolvers += Resolver.url("typesafe", url("http://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns),
     libraryDependencies ++= Seq(
-      compilerPlugin("org.typelevel" % "kind-projector" % "0.11.0" cross CrossVersion.full),
+      compilerPlugin("org.typelevel" % "kind-projector" % "0.11.1" cross CrossVersion.full),
       compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
       "org.scalatest" %% "scalatest" % "3.1.0" % Test
     )
